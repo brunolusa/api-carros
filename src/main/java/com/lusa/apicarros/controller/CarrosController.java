@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3001/")
 @RestController
 @Api(value = "Carros", tags = "Carros")
 public class CarrosController {
@@ -38,7 +39,6 @@ public class CarrosController {
                 map(carros -> ResponseEntity.ok().body(carros)).
                 orElseGet(() -> ResponseEntity.notFound().build());
     }
-
     @GetMapping("/api/v1/carros")
     @ApiOperation(value = "Retorna todos os Carros existentes")
     @ApiResponses({
