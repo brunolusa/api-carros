@@ -90,7 +90,7 @@ public class CarrosController {
                         c.setModelo(carro.getModelo());
                         c.setMarca(carro.getMarca());
                         Carros carroAtualizado = carrosRepository.save(c);
-                        return ResponseEntity.ok().body(carroAtualizado);
+                        return ResponseEntity.accepted().body(carroAtualizado);
                     }).orElse(ResponseEntity.notFound().build());
     }
 
